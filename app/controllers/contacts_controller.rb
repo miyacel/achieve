@@ -19,11 +19,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
     if @contact.save
-      # お問い合わせありがとうございました！"とメッセージを表示します。
-    redirect_to root_path, notice: "お問い合わせありがとうございました！"
+    　redirect_to root_path, notice: "お問い合わせありがとうございました！"
     else
-      # 入力フォームを再描画します。
-      render action: 'new'
+      render :new
     end
   end
   private
