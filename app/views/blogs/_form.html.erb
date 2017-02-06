@@ -1,6 +1,8 @@
+
+
 <%= form_for(@blog, url: blog_choose_new_or_comfirm) do |f| %>
   <% if @blog.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
 
       <ul>

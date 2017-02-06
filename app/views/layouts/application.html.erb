@@ -32,17 +32,24 @@
                 <li><%= link_to "ブログ", blogs_path %></li>
               </ul>
             </li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+              <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+              <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
   </header>
   
-  <!-- 追記部分 開始 -->
+  
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
-  <!-- 追記部分 終了-->
+  
 
 <%= yield %>
 
