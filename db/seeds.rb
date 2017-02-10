@@ -10,11 +10,12 @@
 end
 
 n = 1
+n = 0
 while n <= 100
   Blog.create(
       title: "スーパーボウル",
       content: "1年に一度。アメリカ一を競うカップ！！",
-      user_id: n
+      user_id: rand(100) + 1
       )
-      n = n + 1
+  n += 1
 end
