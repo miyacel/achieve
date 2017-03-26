@@ -12,6 +12,8 @@ group :development, :test do
 gem 'byebug'
 gem 'web-console', '~> 2.0'
 gem 'spring'
+gem 'pry-rails'
+gem 'better_errors'
 end
 gem 'twitter-bootstrap-rails'
 gem 'jquery-turbolinks'
@@ -19,3 +21,9 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'rails-i18n'
 gem 'faker'
+gem 'rails_admin'
+gem 'cancan'
+
+group :development do
+    gem 'letter_opener_web'
+end

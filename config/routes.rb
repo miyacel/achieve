@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 root 'top#index' 
 
 
@@ -17,5 +18,9 @@ root 'top#index'
 
 
   get 'blogs' => 'blogs#index'
+  
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 end
