@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
   end
   
   def update
-    @blogs = Blog.find(rarams[:id])
+    @blogs = Blog.find(params[:id])
     @blogs.update(blogs_params)
     
     if @blogs.update(blogs_params)

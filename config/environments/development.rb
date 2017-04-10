@@ -21,7 +21,7 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'https://miyajun-mjlovebvb.c9users.io/' }
   config.action_mailer.delivery_method = :letter_opener_web
 
   # Debug mode disables concatenation and preprocessing of assets.
