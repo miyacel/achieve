@@ -23,6 +23,7 @@ gem 'rails-i18n'
 gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
+gem 'activeresource'
 
 group :development do
     gem 'letter_opener_web'

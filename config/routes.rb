@@ -15,6 +15,8 @@ root 'top#index'
       post :confirm
     end
   end
+  
+  resources :poems, only: [:index, :index]
 
 
   get 'blogs' => 'blogs#index'
