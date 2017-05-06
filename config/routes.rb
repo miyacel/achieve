@@ -16,7 +16,7 @@ root 'top#index'
     end
   end
   
-  resources :poems, only: [:index, :index]
+  resources :poems, only: [:index, :show]
 
 
   get 'blogs' => 'blogs#index'
