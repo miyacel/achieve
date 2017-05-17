@@ -5,7 +5,7 @@ root 'top#index'
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    omniauth_calbacks: "users/omniauth_calbacks"
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
   resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do

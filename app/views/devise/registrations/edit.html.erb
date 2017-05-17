@@ -1,4 +1,3 @@
-
   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
     
     <h2>ユーザーの変更</h2>
@@ -14,18 +13,17 @@
       <div class="field">
         <%= f.label :名前 %><br />
         <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <% if @user.provider.blank? %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
       <div class="field">
-        <%= f.label :password %> <br><i>（変更したくない場合は空白のままにしてください）</i><br />
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-        <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> 文字以上</em>
-        <% end %>
       </div>
 
       <div class="field">
@@ -34,9 +32,13 @@
       </div>
 
       <div class="field">
-        <%= f.label :current_password %><br> <i>（変更を確認するために現在のパスワードが必要です）</i><br />
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
       </div>
+
+    <% end %>
+    
+    <br>
       
       <div class="field">
         <%= profile_img(@user) if profile_img(@user) %>
@@ -49,28 +51,7 @@
       </div>
     <% end %>
     
-    <% if @user.provider.blank? %>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-  </div>
-
-<% end %>
+  
 
     <h3>アカウントをキャンセルする</h3>
 
