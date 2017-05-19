@@ -41,7 +41,7 @@
     <br>
       
       <div class="field">
-        <%= profile_img(@user) if profile_img(@user) %>
+        <%= profile_img blog.user.image_url, size: '50x50' %>
         <%= f.file_field :avatar %>
         <%= f.hidden_field :avatar_cache %>
       </div>
