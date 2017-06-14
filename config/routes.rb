@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   
 
+
+
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-root 'top#index' 
+  root 'top#index' 
 
 
   devise_for :users, controllers: {
@@ -32,6 +38,10 @@ root 'top#index'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  
+  resources :users, only: [:index]
+  
+  resources :relationships, only: [:create, :destroy]
 
 end
 
