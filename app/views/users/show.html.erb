@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <h2>フォローユーザー一覧</h2>
+    <div class="profile_img">
+      <p><%= profile_img(@user)%></p>
+    </div>
+    <p><%= @user.name %></p>
+    <%= render partial: 'followed_user' %>
+    </div>
+  <div class="row">
+    <h2>フォロワーユーザー一覧</h2>
+    <div class="profile_img">
+    <p><%= profile_img(@user)%></p>
+    </div>
+    <p><%= @user.name %></p>
+    <%= render partial: 'followers_user' %>
+  </div>
+</div>
